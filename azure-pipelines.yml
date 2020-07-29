@@ -18,3 +18,16 @@ jobs:
   parameters:
     toxenvs: [py36, py37, py38]
     os: linux
+- job: twine
+  displayName: Upload tagged releases to PyPi
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
+  dependsOn: [precommit, tox_linux]
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.8'
+        addToPath: true
+        architecture: 'x64'
+    - script: "pip install --upgrade pip setuptools wheel twine"
+    - script: "python setup.py sdist bdist_wheel"
+    - script: "twine upload -u __token__ -p ${PYPI_TOKEN} --repository testpypi dist/*"
