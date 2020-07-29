@@ -30,4 +30,4 @@ jobs:
         architecture: 'x64'
     - script: "pip install --upgrade pip setuptools wheel twine"
     - script: "python setup.py sdist bdist_wheel"
-    - script: "twine upload -u __token__ -p ${PYPI_TOKEN} --repository testpypi dist/*"
+    - script: "twine upload -u __token__ -p $PYPI_TOKEN --repository testpypi dist/*"
