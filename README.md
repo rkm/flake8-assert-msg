@@ -27,7 +27,7 @@ Sample `.pre-commit-config.yaml`:
     rev: 3.8.1
     hooks:
     -   id: flake8
-        additional_dependencies: [flake8-assert-msg==1.0.0]
+        additional_dependencies: [flake8-assert-msg==1.1.0]
 ```
 
 ## Acknowledgements
