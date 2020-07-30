@@ -15,7 +15,7 @@ flake8 plugin which forbids assert statements without messages.
 ## flake8 codes
 
 | Code   | Description             |
-|--------|-------------------------|
+| ------ | ----------------------- |
 | ASS001 | do not use bare asserts |
 
 ## Rationale
@@ -29,10 +29,10 @@ See [pre-commit](https://github.com/pre-commit/pre-commit) for instructions
 Sample `.pre-commit-config.yaml`:
 
 ```yaml
--   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.1
-    hooks:
-    -   id: flake8
+- repo: https://gitlab.com/pycqa/flake8
+  rev: 3.8.1
+  hooks:
+      - id: flake8
         additional_dependencies: [flake8-assert-msg==1.1.1]
 ```
 
