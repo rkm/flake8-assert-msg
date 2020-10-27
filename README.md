@@ -1,3 +1,4 @@
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/rkm/flake8-assert-msg/master.svg)](https://results.pre-commit.ci/latest/github/rkm/flake8-assert-msg/master)
 [![Build Status](https://dev.azure.com/ruairidh/flake8-assert-msg/_apis/build/status/rkm.flake8-assert-msg?repoName=rkm%2Fflake8-assert-msg&branchName=master)](https://dev.azure.com/ruairidh/flake8-assert-msg/_build/latest?definitionId=1&repoName=rkm%2Fflake8-assert-msg&branchName=master)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/flake8-assert-msg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
