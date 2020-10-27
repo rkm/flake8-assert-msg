@@ -4,7 +4,7 @@ default_language_version:
 
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v3.1.0
+      rev: v3.2.0
       hooks:
           # General
           - id: check-added-large-files
@@ -40,7 +40,7 @@ repos:
           - id: codespell
             args: [--ignore-words, .meta/codespell-ignores]
     - repo: https://github.com/prettier/prettier
-      rev: "2.0.5"
+      rev: "2.1.2"
       hooks:
           - id: prettier
             args: [--config, .meta/prettierrc.json]
@@ -55,7 +55,7 @@ repos:
       hooks:
           - id: setup-cfg-fmt
     - repo: https://github.com/pre-commit/pygrep-hooks
-      rev: v1.5.1
+      rev: v1.6.0
       hooks:
           - id: python-check-blanket-noqa
           - id: python-check-mock-methods
@@ -77,7 +77,7 @@ repos:
           - id: pyupgrade
             args: [--py36-plus]
     - repo: https://github.com/asottile/yesqa
-      rev: v1.2.1
+      rev: v1.2.2
       hooks:
           - id: yesqa
     - repo: https://github.com/pre-commit/mirrors-mypy
@@ -86,7 +86,7 @@ repos:
           - id: mypy
             args: [--config-file, .meta/mypy.ini]
     - repo: https://github.com/psf/black
-      rev: "19.10b0"
+      rev: "20.8b1"
       hooks:
           - id: black
             language_version: python38
