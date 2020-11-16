@@ -13,9 +13,9 @@ resources:
           ref: refs/tags/v2.0.0
 
 jobs:
-    - template: job--pre-commit.yml@asottile
-      parameters:
-          python: "3.8"
+    # - template: job--pre-commit.yml@asottile
+    #   parameters:
+    #       python: "3.8"
     - template: job--python-tox.yml@asottile
       parameters:
           toxenvs: [py36, py37, py38]
@@ -23,7 +23,7 @@ jobs:
     - job: twine
       displayName: Upload tagged releases to PyPi
       condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
-      dependsOn: [precommit, tox_linux]
+      dependsOn: [tox_linux] # [precommit, tox_linux]
       steps:
           - task: UsePythonVersion@0
             inputs:
