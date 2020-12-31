@@ -21,7 +21,8 @@ flake8 plugin which forbids assert statements without messages.
 
 ## Rationale
 
-This ensures that assertions have clear messages for failures. Adding a message to an assertion also acts as documentation for why the assertion is present.
+This ensures that assertions have clear messages for failures. Adding a message
+to an assertion also acts as documentation for why the assertion is present.
 
 ## As a pre-commit hook
 

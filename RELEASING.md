@@ -20,4 +20,5 @@
     ```
 
 -   Update CHANGELOG.md
--   Commit, tag, and push both. Azure pipelines will auto-build and publish to PyPi
+-   Commit, tag, and push both. Azure pipelines will auto-build and publish to
+    PyPi

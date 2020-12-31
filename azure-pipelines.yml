@@ -1,34 +1,34 @@
 trigger:
-    branches:
-        include: ["*"]
-    tags:
-        include: ["*"]
+  branches:
+    include: ["*"]
+  tags:
+    include: ["*"]
 
 resources:
-    repositories:
-        - repository: asottile
-          type: github
-          endpoint: github
-          name: asottile/azure-pipeline-templates
-          ref: refs/tags/v2.0.0
+  repositories:
+    - repository: asottile
+      type: github
+      endpoint: github
+      name: asottile/azure-pipeline-templates
+      ref: refs/tags/v2.0.0
 
 jobs:
-    - template: job--python-tox.yml@asottile
-      parameters:
-          toxenvs: [py36, py37, py38]
-          os: linux
-    - job: twine
-      displayName: Upload tagged releases to PyPi
-      condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
-      dependsOn: [tox_linux] # [precommit, tox_linux]
-      steps:
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: "3.8"
-                addToPath: true
-                architecture: "x64"
-          - script: pip install --upgrade pip setuptools wheel twine
-          - script: python setup.py sdist bdist_wheel
-          - script: twine upload -u __token__ -p $PYPI_TOKEN dist/*
-            env:
-                PYPI_TOKEN: $(PYPI_TOKEN)
+  - template: job--python-tox.yml@asottile
+    parameters:
+      toxenvs: [py36, py37, py38]
+      os: linux
+  - job: twine
+    displayName: Upload tagged releases to PyPi
+    condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
+    dependsOn: [tox_linux] # [precommit, tox_linux]
+    steps:
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: "3.8"
+          addToPath: true
+          architecture: "x64"
+      - script: pip install --upgrade pip setuptools wheel twine
+      - script: python setup.py sdist bdist_wheel
+      - script: twine upload -u __token__ -p $PYPI_TOKEN dist/*
+        env:
+          PYPI_TOKEN: $(PYPI_TOKEN)
