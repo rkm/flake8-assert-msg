@@ -15,7 +15,7 @@ class Visitor(ast.NodeVisitor):
     def __init__(self) -> None:
         self.missing_msgs: List[Tuple[int, int]] = []
 
-    def visit_Assert(self, node: "ast.Assert") -> None:
+    def visit_Assert(self, node: "ast.Assert") -> None:  # noqa: N802
         if not node.msg:
             self.missing_msgs.append((node.lineno, node.col_offset))
         self.generic_visit(node)

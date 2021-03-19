@@ -1,4 +1,4 @@
 from .flake8_assert_msg import Plugin
-from .version import VERSION as __version__
+from .version import VERSION
 
-__all__ = (Plugin.__name__, "__version__")
+__all__ = (Plugin.__name__, "VERSION")
