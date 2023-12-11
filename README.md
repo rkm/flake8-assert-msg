@@ -34,10 +34,10 @@ Sample `.pre-commit-config.yaml`:
 - repo: https://gitlab.com/pycqa/flake8
   rev: 3.8.1
   hooks:
-      - id: flake8
-        additional_dependencies: [flake8-assert-msg==1.1.1]
+    - id: flake8
+      additional_dependencies: [flake8-assert-msg==1.1.1]
 ```
 
 ## Acknowledgements
 
--   https://github.com/asottile/flake8-walrus used as a template
+- https://github.com/asottile/flake8-walrus used as a template
