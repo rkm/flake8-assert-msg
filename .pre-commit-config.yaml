@@ -4,7 +4,7 @@ default_language_version:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       # General
       - id: check-added-large-files
@@ -35,7 +35,7 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
+    rev: v2.3.0
     hooks:
       - id: codespell
         args: [--ignore-words, .meta/codespell-ignores]
@@ -45,13 +45,13 @@ repos:
       - id: prettier
         args: [--config, .meta/prettierrc.yml]
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.33.0
+    rev: v1.35.1
     hooks:
       - id: yamllint
         args: [-c, .meta/yamllint.yaml]
     # Python
   - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.5.0
+    rev: v2.7.0
     hooks:
       - id: setup-cfg-fmt
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -62,7 +62,7 @@ repos:
       - id: python-use-type-annotations
       - id: python-no-log-warn
   - repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.12.0
+    rev: v3.14.0
     hooks:
       - id: reorder-python-imports
         args: [--py36-plus]
@@ -72,7 +72,7 @@ repos:
       - id: add-trailing-comma
         args: [--py36-plus]
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
+    rev: v3.18.0
     hooks:
       - id: pyupgrade
         args: [--py36-plus]
@@ -82,17 +82,17 @@ repos:
       - id: yesqa
         additional_dependencies: [pep8-naming]
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.8.0
+    rev: v1.11.2
     hooks:
       - id: mypy
         args: [--config-file, .meta/mypy.ini]
   - repo: https://github.com/psf/black
-    rev: "24.1.1"
+    rev: "24.10.0"
     hooks:
       - id: black
         language_version: python38
   - repo: https://github.com/PyCQA/flake8
-    rev: 7.0.0
+    rev: 7.1.1
     hooks:
       - id: flake8
         additional_dependencies:
